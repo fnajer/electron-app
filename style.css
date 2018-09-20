@@ -1,8 +1,11 @@
+/*html, body {
+	height: 100%;
+}
+*/
 body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 100%;
 
 	color: #333;
 	font-family: 'Open Sans', sans-serif;
