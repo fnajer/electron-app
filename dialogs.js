@@ -5,6 +5,7 @@ const path = require('path');
 module.exports = {
 	showMessage,
 	showSaveDialog,
+	showOpenDialog,
 };
 
 function showMessage(browserWindow) {
@@ -33,4 +34,17 @@ function showSaveDialog(browserWindow) {
 			});
 		}
 	});
+}
+
+function showOpenDialog(browserWindow) {
+	dialog.showOpenDialog(browserWindow, {
+		defaultPath: app.getPath('downloads'),
+		filters: [
+			{ name: 'Text Files', extensions: ['txt'] },
+		],
+	}, (filepaths) => {
+		if (filepaths) {
+			console.log(filepaths, fs.readFileSync(filepaths[0], 'utf8'));
+		}
+	})
 }
