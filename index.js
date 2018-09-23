@@ -1,5 +1,6 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, ipcMain} = require('electron');
 const path = require('path');
+const windows = [];
 
 let mainWindow;
 const { setMainMenu } = require('./main-menu.js');
